@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.genpact.model.DataGenerator">
+		<field name="id" type="long" />
+		<field name="data" type="String" />
+		<field name="type" type="String" />
+		<field name="createDate" type="Date" />
+	</model>
+	<model name="com.genpact.model.QbPortlet">
+		<field name="portlet_id" type="long" />
+		<field name="portlet_name" type="String" />
+		<field name="portlet_label_name" type="String" />
+		<field name="project_id" type="long" />
+	</model>
+	<model name="com.genpact.model.QbPortletField">
+		<field name="field_id" type="long" />
+		<field name="field_name" type="String" />
+		<field name="field_label_name" type="String" />
+		<field name="portlet_id" type="long" />
+		<field name="reference_portlet_id" type="long" />
+	</model>
+	<model name="com.genpact.model.QbProject">
+		<field name="project_id" type="long" />
+		<field name="project_name" type="String" />
+	</model>
+	<model name="com.genpact.model.TalendProcess">
+		<field name="processId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="version" type="String" />
+		<field name="className" type="String" />
+		<field name="fileEntryId" type="long" />
+		<field name="description" type="String" />
+		<field name="context" type="String" />
+	</model>
+</model-hints>

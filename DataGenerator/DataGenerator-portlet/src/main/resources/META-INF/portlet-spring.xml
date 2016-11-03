@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.genpact.service.DataGeneratorLocalService" class="com.genpact.service.impl.DataGeneratorLocalServiceImpl" />
+	<bean id="com.genpact.service.DataGeneratorService" class="com.genpact.service.impl.DataGeneratorServiceImpl" />
+	<bean id="com.genpact.service.persistence.DataGeneratorPersistence" class="com.genpact.service.persistence.DataGeneratorPersistenceImpl" parent="basePersistence" />
+	<bean id="com.genpact.service.QbPortletLocalService" class="com.genpact.service.impl.QbPortletLocalServiceImpl" />
+	<bean id="com.genpact.service.QbPortletService" class="com.genpact.service.impl.QbPortletServiceImpl" />
+	<bean id="com.genpact.service.persistence.QbPortletPersistence" class="com.genpact.service.persistence.QbPortletPersistenceImpl" parent="basePersistence" />
+	<bean id="com.genpact.service.QbPortletFieldLocalService" class="com.genpact.service.impl.QbPortletFieldLocalServiceImpl" />
+	<bean id="com.genpact.service.QbPortletFieldService" class="com.genpact.service.impl.QbPortletFieldServiceImpl" />
+	<bean id="com.genpact.service.persistence.QbPortletFieldPersistence" class="com.genpact.service.persistence.QbPortletFieldPersistenceImpl" parent="basePersistence" />
+	<bean id="com.genpact.service.QbProjectLocalService" class="com.genpact.service.impl.QbProjectLocalServiceImpl" />
+	<bean id="com.genpact.service.QbProjectService" class="com.genpact.service.impl.QbProjectServiceImpl" />
+	<bean id="com.genpact.service.persistence.QbProjectPersistence" class="com.genpact.service.persistence.QbProjectPersistenceImpl" parent="basePersistence" />
+	<bean id="com.genpact.service.TalendProcessLocalService" class="com.genpact.service.impl.TalendProcessLocalServiceImpl" />
+	<bean id="com.genpact.service.persistence.TalendProcessPersistence" class="com.genpact.service.persistence.TalendProcessPersistenceImpl" parent="basePersistence" />
+</beans>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.genpact.model.impl.DataGeneratorModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="data">
+				<column name="DATA_" />
+			</basic>
+			<basic name="type">
+				<column name="TYPE_" />
+			</basic>
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.genpact.model.impl.QbPortletModelImpl">
+		<attributes>
+			<id name="portlet_id" />
+			<basic name="portlet_name" />
+			<basic name="portlet_label_name" />
+			<basic name="project_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.genpact.model.impl.QbPortletFieldModelImpl">
+		<attributes>
+			<id name="field_id" />
+			<basic name="field_name" />
+			<basic name="field_label_name" />
+			<basic name="portlet_id" />
+			<basic name="reference_portlet_id" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.genpact.model.impl.QbProjectModelImpl">
+		<attributes>
+			<id name="project_id" />
+			<basic name="project_name" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.genpact.model.impl.TalendProcessModelImpl">
+		<attributes>
+			<id name="processId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="name" />
+			<basic name="version" />
+			<basic name="className" />
+			<basic name="fileEntryId" />
+			<basic name="description" />
+			<basic name="context" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.genpact.model.impl.DataGeneratorImpl" name="DataGenerator">
+		<table name="t_data_generator" />
+		<attributes />
+	</entity>
+	<entity class="com.genpact.model.impl.QbPortletImpl" name="QbPortlet">
+		<table name="t_qb_portlet" />
+		<attributes />
+	</entity>
+	<entity class="com.genpact.model.impl.QbPortletFieldImpl" name="QbPortletField">
+		<table name="t_qb_portlet_field" />
+		<attributes />
+	</entity>
+	<entity class="com.genpact.model.impl.QbProjectImpl" name="QbProject">
+		<table name="t_qb_project" />
+		<attributes />
+	</entity>
+	<entity class="com.genpact.model.impl.TalendProcessImpl" name="TalendProcess">
+		<table name="talend_TalendProcess" />
+		<attributes />
+	</entity>
+</entity-mappings>

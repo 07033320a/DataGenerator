@@ -1,0 +1,55 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.genpact">
+	<author>710008328</author>
+	<namespace>DataGenerator</namespace>
+	<entity name="DataGenerator" local-service="true" remote-service="true" table="t_data_generator">
+		<!-- PK fields -->
+		<column name="id" type="long" primary="true" />
+		<column name="data" type="String" />
+		<column name="type" type="String" />
+		<column name="createDate" type="Date" />
+	</entity>
+	
+	<entity name="QbProject" local-service="true" remote-service="true" table="t_qb_project">
+		<!-- PK fields -->
+		<column name="project_id" type="long" primary="true" />
+		<column name="project_name" type="String" />
+	</entity>
+	
+	<entity name="QbPortlet" local-service="true" remote-service="true" table="t_qb_portlet">
+		<!-- PK fields -->
+		<column name="portlet_id" type="long" primary="true" />
+		<column name="portlet_name" type="String" />
+		<column name="portlet_label_name" type="String" />
+		<column name="project_id" type="long" />
+	</entity>
+	
+	<entity name="QbPortletField" local-service="true" remote-service="true" table="t_qb_portlet_field">
+		<!-- PK fields -->
+		<column name="field_id" type="long" primary="true" />
+		<column name="field_name" type="String" />
+		<column name="field_label_name" type="String" />
+		<column name="portlet_id" type="long" />
+		
+		<column name="reference_portlet_id" type="long" />
+	</entity>
+	
+	<entity name="TalendProcess" local-service="true" remote-service="false" table="talend_TalendProcess" >
+
+		<column name="processId" type="long" primary="true"/>
+
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="name" type="String" />
+		<column name="version" type="String" />
+		<column name="className" type="String" />
+		<column name="fileEntryId" type="long"  filter-primary="true"/>
+		<column name="description" type="String"/>
+		<column name="context" type="String"/>
+
+	</entity>
+</service-builder>

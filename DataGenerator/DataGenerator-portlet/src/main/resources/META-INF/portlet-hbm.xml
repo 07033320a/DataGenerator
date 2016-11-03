@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.genpact.model.DataGenerator" />
+	<import class="com.genpact.model.QbPortlet" />
+	<import class="com.genpact.model.QbPortletField" />
+	<import class="com.genpact.model.QbProject" />
+	<import class="com.genpact.model.TalendProcess" />
+	<class name="com.genpact.model.impl.DataGeneratorImpl" table="t_data_generator">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="data" type="com.liferay.portal.dao.orm.hibernate.StringType" column="data_" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.StringType" column="type_" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.genpact.model.impl.QbPortletImpl" table="t_qb_portlet">
+		<cache usage="read-write" />
+		<id name="portlet_id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="portlet_name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="portlet_label_name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="project_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.genpact.model.impl.QbPortletFieldImpl" table="t_qb_portlet_field">
+		<cache usage="read-write" />
+		<id name="field_id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="field_name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="field_label_name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="portlet_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="reference_portlet_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.genpact.model.impl.QbProjectImpl" table="t_qb_project">
+		<cache usage="read-write" />
+		<id name="project_id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="project_name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.genpact.model.impl.TalendProcessImpl" table="talend_TalendProcess">
+		<cache usage="read-write" />
+		<id name="processId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="version" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="className" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fileEntryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="context" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>
